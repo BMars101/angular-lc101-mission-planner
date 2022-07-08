@@ -30,8 +30,8 @@ export class EquipmentComponent implements OnInit {
    ngOnInit() { }
 
    addItem(equipment: object){
-     this.cargoHold.push(equipment);
-     this.cargoMass += equipment['mass'];
+      this.cargoHold.push(equipment);
+      this.cargoMass += equipment['mass'];
      if(this.cargoMass >= this.maximumAllowedMass - 200){
        this.active = false;
        this.nearMassMax = true;
@@ -46,5 +46,10 @@ export class EquipmentComponent implements OnInit {
      this.cargoHold = [];
      this.cargoMass = 0;
      this.nearMassMax = false;
-   }  
+   } 
+   removeItem(item: object){
+     let index = this.cargoHold.indexOf(item);
+     this.cargoHold.splice(index, 1);
+     this.cargoMass -= item['mass'];
+   } 
 }
