@@ -16,6 +16,9 @@ h3 {
     font-style: italic;
     color: red;
 }
+.active {
+    background-color: aqua;
+}
 /* Add an 'active' class to style the background of the 'Add to Cargo Hold' buttons. */
 
 
